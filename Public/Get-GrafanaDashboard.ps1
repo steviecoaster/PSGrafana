@@ -1,4 +1,27 @@
 function Get-GrafanaDashboard {
+    <#
+        .SYNOPSIS
+        Returns an object with details about a Grafana dashboard
+        
+        .PARAMETER Name
+        Search the Grafana instance for dashboards by friendly name
+        
+        .PARAMETER Uuid
+        Search the Grafana instance for dashboards by UID
+        
+        .PARAMETER IncludeMetadata
+        Include extra metadata about the dashboard. Excluded by default.
+        
+        .EXAMPLE
+        Get-GrafanaDashboard -Name 'Prod - FileServer'
+        
+        .EXAMPLE
+        Get-GrafanaDashboard -Uuid O0E3f5t
+        
+        .EXAMPLE
+        Get-GrafanaDashboard -Name 'Smiley' -IncudeMetadata
+    
+    #>
     [cmdletBinding()]
     Param(
 
