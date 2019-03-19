@@ -1,4 +1,4 @@
-function New-GrafanaAPIKey {
+function New-GrafanaApiKey {
     <#
         .SYNOPSIS
         Creates a new API key in Grafana
@@ -10,10 +10,10 @@ function New-GrafanaAPIKey {
         The access level for the key. Available options are Admin,Editor, and Viewer
         
         .EXAMPLE
-        New-GrafanaAPIKey -Name RickyBobby -Role Admin
+        New-GrafanaApiKey -Name RickyBobby -Role Admin
 
         .EXAMPLE
-        New-GrafanaAPIKey -Name Alice -Role Editor
+        New-GrafanaApiKey -Name Alice -Role Editor
     #>
     [cmdletBinding()]
     Param(
