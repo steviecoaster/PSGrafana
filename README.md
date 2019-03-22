@@ -17,6 +17,7 @@ The module is currently in development, and as such expect rapid changes, specif
 - Remove-GrafanaDatasource
 - Remove-GrafanaApiKey
 - New-GrafanaApiKey
+- New-GrafanaSnapshot
 
 ## Installation
 
