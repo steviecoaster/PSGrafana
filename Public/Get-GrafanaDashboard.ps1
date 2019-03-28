@@ -29,11 +29,15 @@ function Get-GrafanaDashboard {
         [String]
         $Name,
 
-        [Parameter(Position=1,ParameterSetName='Uuid')]
+        [Parameter(Position=0,ParameterSetName='Uuid')]
         [String]
         $Uuid,
 
-        [Parameter(Position=2)]
+        [Parameter(Position=0,ParameterSetName='Tag')]
+        [String]
+        $Tag,
+
+        [Parameter()]
         [Switch]
         $IncludeMetadata
     )
@@ -60,6 +64,7 @@ function Get-GrafanaDashboard {
                 $result = Invoke-WebRequest @irmParams
 
                 $result.Content | ConvertFrom-Json
+            
             }
 
             'Uuid' {
@@ -85,11 +90,28 @@ function Get-GrafanaDashboard {
         
                     $result.dashboard
                 }
+            
             }
-        }
-        
-        
 
+            'Tag' {
+                
+                $irmParams = @{
+            
+                    Method      = "GET"
+                    Uri         =  "$($configuration.GrafanaUri)/search?tag=$Tag" 
+                    Headers     = $header
+                    ContentType = "application/json"
+    
+                }
+
+                $result = Invoke-WebRequest @irmParams
+                
+                $result.Content | ConvertFrom-Json
+            
+            }
         
-    }
-}
+        }#switch
+                
+    }#process
+
+}#function

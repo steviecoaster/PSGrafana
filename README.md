@@ -8,23 +8,28 @@ The module is currently in development, and as such expect rapid changes, specif
 
 ## Currently available functions include:
 
- - Get-GrafanaConfig
- - Get-GrafanaDashboard
- - Get-GrafanaServerHealth
- - Get-GrafanaApiKey
- - New-GrafanaApiKey
- - Set-GrafanaConfig
+- Get-GrafanaConfig
+- Set-GrafanaConfig
+- Get-GrafanaDashboard
+- Get-GrafanaServerHealth
+- Get-GrafanaApiKey
+- Get-GrafanaDatasource
+- Remove-GrafanaDatasource
+- Remove-GrafanaApiKey
+- New-GrafanaApiKey
+- New-GrafanaSnapshot
+- Get-GrafanaAlert
 
- ## Installation
+## Installation
 
- At present, this module is only available by cloning this repository. Upon first run, a configuration file will be generated for you by asking a series of questions. Namely:
- 
- - What is your Grafana instance URL?
- - What is your Grafana instance API key?
+At present, this module is only available by cloning this repository. Upon first run, a configuration file will be generated for you by asking a series of questions. Namely:
 
- Once provided a Grafana.json file will be generated and placed in the Config directory of the module. All functions pull in this configuration in their `begin {}` blocks to reference the global $configuration variable.
+- What is your Grafana instance URL?
+- What is your Grafana instance API key?
 
- ## Issues?
+Once provided a Grafana.json file will be generated and placed in the Config directory of the module. All functions pull in this configuration in their `begin {}` blocks to reference the global $configuration variable.
 
- Did you find a bug? Awesome! I wanna know about it. Please file an issue providing as much information as possible. 
- Did you find a bug, _and_ fix the bug? Awesome! Thanks so much! Please file the detailed issue, and submit a PR for review. Be sure to add 'Fixes _issue\_number_' at the bottom of the PR notes so the Issue can be closed automatically upon merge, and the history shows in both.
+## Issues?
+
+Did you find a bug? Awesome! I wanna know about it. Please file an issue providing as much information as possible.
+Did you find a bug, _and_ fix the bug? Awesome! Thanks so much! Please file the detailed issue, and submit a PR for review. Be sure to add 'Fixes _issue\_number_' at the bottom of the PR notes so the Issue can be closed automatically upon merge, and the history shows in both.
