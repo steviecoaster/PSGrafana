@@ -72,7 +72,7 @@ if($Test.IsPresent) {
         throw "Cannot find the 'Pester' module. Please specify '-Bootstrap' to install build dependencies."
     }
 
-    
+    Install-Module -Name Pester -RequiredVersion 4.3.1
 
     $RelevantFiles = (Get-ChildItem $PSScriptRoot -Recurse -Include "*.psm1","*.ps1").FullName
 
@@ -82,7 +82,7 @@ if($Test.IsPresent) {
         $res = Invoke-Pester "./Test" -OutputFormat NUnitXml -OutputFile TestResults.xml -CodeCoverage $RelevantFiles -PassThru
         if ($res.FailedCount -gt 0) { throw "$($res.FailedCount) tests failed." }
     } else {
-        $res = Invoke-Pester "./Tests" -PassThru
+        $res = Invoke-Pester "./Test/Validation.Tests.ps1" -PassThru
     }
 
 }
