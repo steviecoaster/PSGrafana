@@ -72,7 +72,7 @@ if($Test.IsPresent) {
         throw "Cannot find the 'Pester' module. Please specify '-Bootstrap' to install build dependencies."
     }
 
-    Install-Module -Name Pester -RequiredVersion 4.3.1
+    Install-Module -Name Pester -RequiredVersion 4.3.1 -Scope CurrentUser
 
     $RelevantFiles = (Get-ChildItem $PSScriptRoot -Recurse -Include "*.psm1","*.ps1").FullName
 
