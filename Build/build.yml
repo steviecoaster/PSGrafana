@@ -1,6 +1,6 @@
 jobs:
-- job: CookToast
-  displayName: 'Cook Toast'
+- job: PrepPSGrafana
+  displayName: 'Prep PSGrafana'
   pool:
     vmImage: 'VS2017-Win2016'
   steps:
@@ -9,6 +9,7 @@ jobs:
     inputs:
       targetType: Inline
       script: ./Build/build.ps1 -Bootstrap -Test
+      condition: succeededOrFailed()
 
   - task: PowerShell@2
     displayName: 'Compile module'
