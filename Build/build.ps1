@@ -38,15 +38,15 @@ if ($Compile.IsPresent) {
         $null = New-Item -Path .\Output -ItemType Directory
     }
 
-    Copy-Item -Path '.\PSGrafana\*' -Filter '*.*' -Exclude '*.ps1', '*.psm1' -Recurse -Destination .\Output -Force
+    Copy-Item -Path '.\*' -Filter '*.*' -Exclude '*.ps1', '*.psm1' -Recurse -Destination .\Output -Force
     Remove-Item -Path .\Output\Private, .\Output\Public -Recurse -Force
 
     # Copy Module README file
     Copy-Item -Path '.\README.md' -Destination .\Output -Force
 
-    Get-ChildItem -Path ".\PSGrafana\Private\*.ps1" -Recurse | Get-Content | Add-Content .\Output\PSGrafana.psm1
+    Get-ChildItem -Path ".\Private\*.ps1" -Recurse | Get-Content | Add-Content .\Output\PSGrafana.psm1
 
-    $Public  = @( Get-ChildItem -Path ".\PSGrafana\Public\*.ps1" -ErrorAction SilentlyContinue )
+    $Public  = @( Get-ChildItem -Path ".\Public\*.ps1" -ErrorAction SilentlyContinue )
 
     $Public | Get-Content | Add-Content .\Output\PSGrafana.psm1
 
@@ -58,7 +58,7 @@ if ($Compile.IsPresent) {
     Rename-Item -Path .\Output -NewName 'PSGrafana'
 
     # Compress output, for GitHub release
-    Compress-Archive -Path .\PSGrafana\* -DestinationPath .\Azure-Pipelines\PSGrafana.zip
+    Compress-Archive -Path .\* -DestinationPath .\Azure-Pipelines\PSGrafana.zip
 
     # Re-import module, extract release notes and version
     Import-Module .\PSGrafana.psd1 -Force
