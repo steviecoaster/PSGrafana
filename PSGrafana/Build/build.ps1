@@ -47,7 +47,7 @@ if ($Compile.IsPresent) {
 
     $Public  = @( Get-ChildItem -Path ".\PSGrafana\Public\*.ps1" -ErrorAction SilentlyContinue )
 
-    $Public | Get-Content | Add-Content .\PSGrafana\Output\PSGrafana.psm1
+    $Public | Get-Content | Add-Content .\Output\PSGrafana.psm1
 
 
 
