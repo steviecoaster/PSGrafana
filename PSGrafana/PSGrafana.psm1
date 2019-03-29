@@ -6,7 +6,7 @@ Foreach($Script in @($public + $private)){
     . $Script.FullName
 
 }
-
+<#
 If(!(Test-Path $PSScriptRoot\Config\Grafana.json)){
     $grafanaConfig = @{
         
@@ -29,3 +29,4 @@ If(!(Test-Path $PSScriptRoot\Config\Grafana.json)){
     
 
 }
+#>
