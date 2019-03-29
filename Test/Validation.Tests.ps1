@@ -1,4 +1,4 @@
-$ProjectRoot = Resolve-Path "$PSScriptRoot"
+$ProjectRoot = Resolve-Path "$PSScriptRoot\.."
 $ModuleRoot = Split-Path (Resolve-Path "$ProjectRoot\PSGrafana\*.psm1")
 $ModuleName = Split-Path $ModuleRoot -Leaf
 
@@ -6,7 +6,7 @@ Describe "General project validation: $ModuleName" {
     BeforeAll {
         $FileSearch = @{
             Path    = $ProjectRoot
-            Include = '*.ps1', '*.psm1', '*.psd1'
+            Include = '*.ps1'
             Recurse = $true
             
         }
