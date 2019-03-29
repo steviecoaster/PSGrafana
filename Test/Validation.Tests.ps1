@@ -26,7 +26,9 @@ Describe "General project validation: $ModuleName" {
         $Errors.Count | Should -Be 0
     }
 
+    If((Test-Path $ProjectRoot\PSGrafana\Config\*.json)){
     It "'$ModuleName' can import cleanly" {
         {Import-Module (Join-Path $ModuleRoot "PSGrafana.psd1") -Force} | Should -Not -Throw
+    }
     }
 }
