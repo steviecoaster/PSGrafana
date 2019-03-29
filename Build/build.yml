@@ -45,3 +45,10 @@ jobs:
       artifactName: 'PipelinesScripts'
       targetPath: .\Build
     condition: succeededOrFailed()
+
+  - task: PSGallery@2
+      displayName: 'Publish to PSGallery'
+      inputs:
+          targetType: Inline
+          script: .\Build\build.ps1 -Deploy
+          condition: succeededOrFailed()
