@@ -46,7 +46,7 @@ jobs:
       targetPath: .\Build
     condition: succeededOrFailed()
 
-  - task: PSGallery@2
+  - task: Powershell@2
     displayName: 'Publish to PSGallery'
     inputs:
         targetType: Inline
