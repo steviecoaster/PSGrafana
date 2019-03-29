@@ -115,7 +115,7 @@ if($Deploy.IsPresent) {
 
     Try {
         $Splat = @{
-            Path        = (Resolve-Path -Path .\PSGrafana\BurntToast)
+            Path        = (Resolve-Path -Path .\PSGrafana)
             NuGetApiKey = $env:NuGetAPIKey
             ErrorAction = 'Stop'
         }
