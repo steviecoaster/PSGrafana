@@ -54,7 +54,7 @@ if ($Compile.IsPresent) {
 
     "`$PublicFunctions = '$($Public.BaseName -join "', '")'" | Add-Content .\Output\PSGrafana.psm1
 
-    Get-Content -Path .\Build\PSGrafana-Template.psm1 | Add-Content .\Output\PSGrafana.psm1
+    
 
     Remove-Item -Path .\PSGrafana -Recurse -Force
     Rename-Item -Path .\Output -NewName 'PSGrafana'
@@ -66,6 +66,8 @@ if ($Compile.IsPresent) {
     Import-Module .\PSGrafana\PSGrafana.psd1 -Force
     (Get-Module PSGrafana)[0].ReleaseNotes | Add-Content .\Build\release-notes.txt
     (Get-Module PSGrafana)[0].Version.ToString() | Add-Content .\Build\release-version.txt
+
+    Get-Content -Path .\Build\PSGrafana-Template.psm1 | Add-Content .\PSGrafana\PSGrafana.psm1
 }
 
 # Test step
