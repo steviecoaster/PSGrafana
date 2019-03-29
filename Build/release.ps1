@@ -10,7 +10,7 @@ param(
     $Publish,
 
     [switch]
-    $Announce
+    $Tweet
 )
 
 # Bootstrap step
@@ -47,8 +47,8 @@ if ($Publish.IsPresent) {
     }
 }
 
-# Announce step
-if($Announce.IsPresent) {
+# Tweet step
+if($Tweet.IsPresent) {
     if (-not (Get-Module -Name PSTwitterAPI -ListAvailable)) {
         throw "Cannot find the 'PSTwitterAPI' module. Please specify '-Bootstrap' to install release dependencies."
     }
@@ -66,14 +66,8 @@ if($Announce.IsPresent) {
 
     $ReleaseVersion = Get-Content -Path $env:ArtifactDir\PipelinesScripts\release-version.txt
 
-    $Tweets = @("I just pushed BurntToast v$ReleaseVersion to the #PowerShell Gallery via @AzureDevOps!$([System.Environment]::NewLine)$([System.Environment]::NewLine)$env:ReleaseMessage$([System.Environment]::NewLine)$([System.Environment]::NewLine)https://www.powershellgallery.com/packages/BurntToast/$ReleaseVersion",
-                "You can also find this release over on @GitHub.$([System.Environment]::NewLine)$([System.Environment]::NewLine)Please do fire through any issue, feature requests, or submit some additional code!$([System.Environment]::NewLine)$([System.Environment]::NewLine)https://github.com/Windos/BurntToast/releases/tag/v$ReleaseVersion")
-
-    foreach ($Tweet in $Tweets) {
-        if ($PrevTweet) {
-            $PrevTweet = Send-TwitterStatuses_Update -in_reply_to_status_id $PrevTweet.id.ToString() -status $Tweet
-        } else {
-            $PrevTweet = Send-TwitterStatuses_Update -status $Tweet
-        }
-    }
+    $Tweet = "Guys! PSGrafana v$ReleaseVersion is pushed to the #PowerShell Gallery via @AzureDevOps!$([System.Environment]::NewLine)$([System.Environment]::NewLine)$([System.Environment]::NewLine)https://www.powershellgallery.com/packages/PSGrafana/$ReleaseVersion"
+                
+    Send-TwitterStatuses_Update -status $Tweet
+        
 }
