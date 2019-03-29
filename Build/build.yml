@@ -52,3 +52,5 @@ jobs:
         targetType: Inline
         script: .\Build\build.ps1 -Deploy
         condition: succeededOrFailed()
+    env:
+      NugetAPIKey: $(NugetAPIKey)
