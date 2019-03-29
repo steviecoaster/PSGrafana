@@ -30,7 +30,7 @@ CompanyName = 'Unknown'
 Copyright = '(c) Stephen Valdinger. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+ Description = 'This module enables you to interact with Grafana via is REST API'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
