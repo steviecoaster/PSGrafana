@@ -121,7 +121,7 @@ if($Deploy.IsPresent) {
     Try {
         $Splat = @{
             Path        = (Resolve-Path -Path .\PSGrafana)
-            NuGetApiKey = $env:NugetAPIKey
+            NuGetApiKey = $NugetAPIKey
             ErrorAction = 'Stop'
         }
         Publish-Module @Splat
