@@ -40,10 +40,11 @@ if ($Compile.IsPresent) {
 
     Copy-Item -Path '.\PSGrafana\*' -Filter '*.*' -Exclude '*.ps1', '*.psm1' -Recurse -Destination .\Output -Force
     Remove-Item -Path .\Output\Private, .\Output\Public -Recurse -Force
-    # Copy Module README file
-    Copy-Item -Path '.\PSGrafana\README.md' -Destination .\PSGrafana\Output -Force
 
-    Get-ChildItem -Path ".\PSGrafana\Private\*.ps1" -Recurse | Get-Content | Add-Content .\PSGrafana\Output\PSGrafana.psm1
+    # Copy Module README file
+    Copy-Item -Path '.\PSGrafana\README.md' -Destination .\Output -Force
+
+    Get-ChildItem -Path ".\PSGrafana\Private\*.ps1" -Recurse | Get-Content | Add-Content .\Output\PSGrafana.psm1
 
     $Public  = @( Get-ChildItem -Path ".\PSGrafana\Public\*.ps1" -ErrorAction SilentlyContinue )
 
@@ -51,20 +52,20 @@ if ($Compile.IsPresent) {
 
 
 
-    "`$PublicFunctions = '$($Public.BaseName -join "', '")'" | Add-Content .\PSGrafana\Output\PSGrafana.psm1
+    "`$PublicFunctions = '$($Public.BaseName -join "', '")'" | Add-Content .\Output\PSGrafana.psm1
 
-    Get-Content -Path .\PSGrafana\Build\PSGrafana-Template.psm1 | Add-Content .\PSGrafana\Output\PSGrafana.psm1
+    Get-Content -Path .\PSGrafana\Build\PSGrafana-Template.psm1 | Add-Content .\Output\PSGrafana.psm1
 
     Remove-Item -Path .\PSGrafana -Recurse -Force
-    Rename-Item -Path .\PSGrafana\Output -NewName 'PSGrafana'
+    Rename-Item -Path .\Output -NewName 'PSGrafana'
 
     # Compress output, for GitHub release
     Compress-Archive -Path .\PSGrafana\* -DestinationPath .\Build\PSGrafana.zip
 
     # Re-import module, extract release notes and version
     Import-Module .\PSGrafana\PSGrafana.psd1 -Force
-    (Get-Module PSGrafana)[0].ReleaseNotes | Add-Content .\PSGrafana\Build\release-notes.txt
-    (Get-Module PSGrafana)[0].Version.ToString() | Add-Content .\PSGrafana\Build\release-version.txt
+    (Get-Module PSGrafana)[0].ReleaseNotes | Add-Content .\Build\release-notes.txt
+    (Get-Module PSGrafana)[0].Version.ToString() | Add-Content .\Build\release-version.txt
 }
 
 # Test step
