@@ -54,7 +54,7 @@ if ($Compile.IsPresent) {
 
     "`$PublicFunctions = '$($Public.BaseName -join "', '")'" | Add-Content .\Output\PSGrafana.psm1
 
-    Get-Content -Path .\PSGrafana\Build\PSGrafana-Template.psm1 | Add-Content .\Output\PSGrafana.psm1
+    Get-Content -Path .\Build\PSGrafana-Template.psm1 | Add-Content .\Output\PSGrafana.psm1
 
     Remove-Item -Path .\PSGrafana -Recurse -Force
     Rename-Item -Path .\Output -NewName 'PSGrafana'
