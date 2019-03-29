@@ -7,7 +7,10 @@ param(
     $Compile,
 
     [switch]
-    $Test
+    $Test,
+
+    [switch]
+    $Deploy
 )
 
 # Bootstrap step
