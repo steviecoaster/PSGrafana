@@ -23,6 +23,11 @@ if ($Bootstrap.IsPresent) {
         Install-Module -Name Pester -Scope CurrentUser -Force
     }
 
+    # For tweeting
+    if (-not (Get-Module -Name PSTwitterAPI -ListAvailable)) {
+        Write-Warning "Module 'PSTwitterAPI' is missing. Installing 'PSTwitterAPI' ..."
+        Install-Module -Name PSTwitterAPI -Scope CurrentUser -Force
+    }
 
 }
 
@@ -116,7 +121,7 @@ if($Deploy.IsPresent) {
     Try {
         $Splat = @{
             Path        = (Resolve-Path -Path .\PSGrafana)
-            NuGetApiKey = $env:NuGetAPIKey
+            NuGetApiKey = $env:NugetAPIKey
             ErrorAction = 'Stop'
         }
         Publish-Module @Splat
