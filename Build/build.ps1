@@ -7,13 +7,7 @@ param(
     $Compile,
 
     [switch]
-    $Test,
-
-    [switch]
-    $Deploy,
-
-    [switch]
-    $Tweet
+    $Test
 )
 
 # Bootstrap step
@@ -119,7 +113,9 @@ if($Deploy.IsPresent) {
         }
         Publish-Module @Splat
 
+
         Write-Output -InputObject ('PSGrafana PowerShell Module published to the PowerShell Gallery')
+
     } Catch {
         throw $_
     }

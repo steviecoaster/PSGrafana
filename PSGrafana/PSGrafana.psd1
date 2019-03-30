@@ -118,6 +118,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
+
          ReleaseNotes = 'This version addresses an inssue in Get-GrafanaConfig. It also improves the output of New-GrafanaApiKey'
 
     } # End of PSData hashtable

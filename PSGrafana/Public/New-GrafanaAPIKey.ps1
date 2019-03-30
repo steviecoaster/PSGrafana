@@ -46,6 +46,9 @@ function New-GrafanaApiKey {
 
         }
 
+
+        Invoke-RestMethod @irmParams
+        
         $data = Invoke-RestMethod @irmParams
         $NewApiKey = $data.key
         Write-Information "API Key has been generated successfully"
@@ -55,7 +58,6 @@ function New-GrafanaApiKey {
 
         $data | Format-List
 
-        
     }
 
 
