@@ -10,7 +10,10 @@ param(
     $Test,
 
     [switch]
-    $Deploy
+    $Deploy,
+
+    [switch]
+    $Tweet
 )
 
 # Bootstrap step
@@ -104,19 +107,9 @@ if($Deploy.IsPresent) {
 
     [version]$currentVersion = Get-Content  .\Build\release-version.txt
 
-    If($currentversion.build -eq 1){
-
-        $null        
-    
-    }
-
-    Else {
-
-        $newVersion = $currentVersion.Build + 1
+    $newVersion = $currentVersion.Build + 1
         
-        Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
-
-    }
+    Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
 
     Try {
         $Splat = @{
