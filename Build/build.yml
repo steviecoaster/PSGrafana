@@ -3,7 +3,13 @@ jobs:
   displayName: 'Prep PSGrafana'
   pool:
     vmImage: 'VS2017-Win2016'
-  steps:
+  trigger:
+    branches:
+      include:
+        - master
+      exclude:
+        - Dev
+    steps:
   - task: PowerShell@2
     displayName: 'Run tests (individual .ps1 files)'
     inputs:
