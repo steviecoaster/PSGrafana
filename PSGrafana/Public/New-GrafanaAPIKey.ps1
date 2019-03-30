@@ -46,8 +46,18 @@ function New-GrafanaApiKey {
 
         }
 
+
         Invoke-RestMethod @irmParams
         
+        $data = Invoke-RestMethod @irmParams
+        $NewApiKey = $data.key
+        Write-Information "API Key has been generated successfully"
+        Write-Information "This is the only time you'll be able to view the API key."
+        Write-Information "The key as been put into the $NewApiKey variable automatically"
+        Write-Information "Please make note of this key for your records, should you need it."
+
+        $data | Format-List
+
     }
 
 

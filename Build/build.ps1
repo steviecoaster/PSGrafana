@@ -7,10 +7,7 @@ param(
     $Compile,
 
     [switch]
-    $Test,
-
-    [switch]
-    $Deploy
+    $Test
 )
 
 # Bootstrap step
@@ -104,19 +101,9 @@ if($Deploy.IsPresent) {
 
     [version]$currentVersion = Get-Content  .\Build\release-version.txt
 
-    If($currentversion.build -eq 1){
-
-        $null        
-    
-    }
-
-    Else {
-
-        $newVersion = $currentVersion.Build + 1
+    $newVersion = $currentVersion.Build + 1
         
-        Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
-
-    }
+    Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
 
     Try {
         $Splat = @{
@@ -126,7 +113,9 @@ if($Deploy.IsPresent) {
         }
         Publish-Module @Splat
 
-        Write-Output -InputObject ('BurntToast PowerShell Module published to the PowerShell Gallery')
+
+        Write-Output -InputObject ('PSGrafana PowerShell Module published to the PowerShell Gallery')
+
     } Catch {
         throw $_
     }
