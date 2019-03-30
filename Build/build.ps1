@@ -119,7 +119,7 @@ if($Deploy.IsPresent) {
         }
         Publish-Module @Splat
 
-        Write-Output -InputObject ('BurntToast PowerShell Module published to the PowerShell Gallery')
+        Write-Output -InputObject ('PSGrafana PowerShell Module published to the PowerShell Gallery')
     } Catch {
         throw $_
     }
