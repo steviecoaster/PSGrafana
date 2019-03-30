@@ -9,7 +9,7 @@ jobs:
         - master
       exclude:
         - Dev
-    steps:
+  steps:
   - task: PowerShell@2
     displayName: 'Run tests (individual .ps1 files)'
     inputs:
