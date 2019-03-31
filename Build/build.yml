@@ -48,7 +48,7 @@ jobs:
       targetPath: .\Build
     condition: succeededOrFailed()
 
-jobs:
+
 - job: PublishPSGrafana
   displayName: 'Publish To PSGrafana'
   pool:
