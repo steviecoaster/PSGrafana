@@ -4,12 +4,14 @@ jobs:
   pool:
     vmImage: 'VS2017-Win2016'
 
+
   trigger:
     branches:
       include:
         - master
       exclude:
         - Dev
+
   steps:
   - task: PowerShell@2
     displayName: 'Run tests (individual .ps1 files)'
@@ -52,6 +54,19 @@ jobs:
       artifactName: 'PipelinesScripts'
       targetPath: .\Build
     condition: succeededOrFailed()
+
+
+- job: PublishPSGrafana
+  displayName: 'Publish To PSGrafana'
+  pool:
+    vmImage: 'VS2017-Win2016'
+  trigger:
+  branches:
+    include:
+      - master
+    exclude:
+      - Dev
+  steps:
 
   - task: Powershell@2
     displayName: 'Publish to PSGallery'
