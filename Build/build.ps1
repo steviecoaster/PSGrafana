@@ -51,7 +51,7 @@ if ($Compile.IsPresent) {
     Remove-Item -Path .\Output\Private, .\Output\Public -Recurse -Force
 
     # Copy Module README file
-    Copy-Item -Path '.\PSGrafana\README.md' -Destination .\Output -Force
+    Copy-Item -Path '.\README.md' -Destination .\Output -Force
 
     Get-ChildItem -Path ".\PSGrafana\Private\*.ps1" -Recurse | Get-Content | Add-Content .\Output\PSGrafana.psm1
 
