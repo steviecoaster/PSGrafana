@@ -1,2 +1,6 @@
 *.json
 buildlocal.ps1
+PSGrafana-build/**
+Build/release-notes.txt
+Build/release-version.txt
+Build/Output
