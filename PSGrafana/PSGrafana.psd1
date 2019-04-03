@@ -12,7 +12,7 @@
 RootModule = 'PSGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.2'
+ModuleVersion = '0.0.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -119,7 +119,7 @@ PrivateData = @{
 
         # ReleaseNotes of this module
 
-         ReleaseNotes = 'This version provides the Set-GrafanaConfig command, which is used if you need to modify your configuration in any way.'
+         ReleaseNotes = 'Documentation release. Wiki is now available and -Online help for each cmdlet points to it.'
 
     } # End of PSData hashtable
 
