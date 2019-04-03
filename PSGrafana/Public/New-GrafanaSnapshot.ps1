@@ -1,6 +1,24 @@
 function New-GrafanaSnapshot {
+    <#
+        .SYNOPSIS
+        Take a snapshot of a dashboard in Grafana
 
-    [cmdletBinding()]
+        .PARAMETER DashboardTitle
+        Title of the dashboard you wish to snapshot
+
+        .PARAMETER SnapshotName
+        Name of the snapshot you are creating
+
+        .PARAMETER Expires
+        Time (in seconds) the snapshot stays alive. Set to 0 to never expire.
+    
+        .EXAMPLE
+        New-GrafanaSnapshot -DashboardTitle WebHosts -SnapshotName WebSnap -Expires 0
+        
+        Create a new snapshot of WebHosts with the name WebSnap that never expires
+    #>
+
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/New-GrafanaSnapshot")]
     Param(
 
         [Parameter(Mandatory,Position=0)]

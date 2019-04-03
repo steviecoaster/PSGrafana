@@ -38,7 +38,7 @@ function Get-GrafanaAlert {
 
     #>
     
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaAlert")]
     Param(
         
         [Parameter()]

@@ -6,6 +6,9 @@ function Get-GrafanaApiKey {
         .EXAMPLE 
         Get-GrafanaApiKey
     #>
+    [cmdletBinding(HelpUri="ttps://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaApiKey")]
+    Param()
+    
     begin { $null = Get-GrafanaConfig }
 
     process {

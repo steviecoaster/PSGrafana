@@ -9,6 +9,10 @@ function Get-GrafanaServerHealth {
         Get-GrafanaServerhealth
 
     #>
+
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaServerHealth")]
+    Param()
+    
     begin { $null = Get-GrafanaConfig}
 
     process {

@@ -10,10 +10,10 @@ function Get-GrafanaConfig {
         Get-GrafanaConfig
         
         .EXAMPLE
-        Get-GrafanaConfig C:\Configs\Grafana.json
+        Get-GrafanaConfig -ConfigurationFile C:\Configs\Grafana.json
         
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaConfig")]
     Param(
         [Parameter(Position=0)]
         [String]

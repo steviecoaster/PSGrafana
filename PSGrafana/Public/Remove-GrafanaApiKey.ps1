@@ -11,7 +11,7 @@ function Remove-GrafanaApiKey {
 
     #>
     
-    [cmdletBinding(SupportsShouldProcess=$true,ConfirmImpact="High")]
+    [cmdletBinding(SupportsShouldProcess=$true,ConfirmImpact="High",HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Remove-GrafanaApiKey")]
     Param(
 
     [Parameter(Mandatory,Position=0,ValueFromPipeline,ValueFromPipelineByPropertyName)]
