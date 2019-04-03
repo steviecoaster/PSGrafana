@@ -20,7 +20,7 @@ function Set-GrafanaConfig {
     Param(
         [Parameter()]
         [String]
-        $ConfigurationFile = "$(Split-Path $PSScriptRoot)\Config\Grafana.json",
+        $ConfigurationFile = "$PSScriptRoot\Config\Grafana.json",
 
         [Parameter()]
         [String]
