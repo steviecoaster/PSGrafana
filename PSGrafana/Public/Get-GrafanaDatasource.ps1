@@ -22,11 +22,10 @@ function Get-GrafanaDatasource {
     Get-GrafanaDatasource -Datasourcename ElasticPuppies
     
     .NOTES
-    @Adilio made me use ## to generate this and I feel dirty
     
     #>
     
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaDatasource")]
     Param(
         [Parameter()]
         [Switch]

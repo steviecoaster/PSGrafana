@@ -15,7 +15,7 @@ function Remove-GrafanaDatasource {
         .EXAMPLE
         Remove-GrafanaDashboard -DatasourceName 'ElasticPuppies'
     #>
-    [cmdletBinding(SupportsShouldProcess=$true,ConfirmImpact="High")]
+    [cmdletBinding(SupportsShouldProcess=$true,ConfirmImpact="High",HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Remove-GrafanaDatasource")]
     param(
         
         [Parameter()]

@@ -20,7 +20,7 @@ function New-GrafanaApiKey {
         It is highly recommended you run this command saved to a variable such as $ApiKey = New-GrafanaApiKey -Name ElmerFudd -Role Viewer.
         This way you can access the properties Name and Key within the variable. E.g. $ApiKey.name, or $ApiKey.key.
     #>
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/New-GrafanaApiKey")]
     Param(
         
         [Parameter(Mandatory,Position=0)]

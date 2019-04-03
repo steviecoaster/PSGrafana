@@ -9,6 +9,9 @@ function Get-GrafanaDashboard {
         .PARAMETER Uuid
         Search the Grafana instance for dashboards by UID
         
+        .PARAMETER Tag
+        Search the Grafana instance for dashboards by Tag
+        
         .PARAMETER IncludeMetadata
         Include extra metadata about the dashboard. Excluded by default.
         
@@ -22,7 +25,7 @@ function Get-GrafanaDashboard {
         Get-GrafanaDashboard -Name 'Smiley' -IncudeMetadata
     
     #>
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaDashboard")]
     Param(
 
         [Parameter(Position=0,ParameterSetName='Name')]
