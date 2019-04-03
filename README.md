@@ -4,7 +4,11 @@ The PSGrafana module is a Powershell wrapper around the Grafana API. Grafana use
 
 ## Status
 
-The module is currently in development, and as such expect rapid changes, specifically on the Dev branch. The master branch will only contain code that has been deemed "working"
+The module is currently in development, and as such expect rapid changes, specifically on the `develop` branch. The master branch will only contain code that has been deemed "working" and triggers the pipeline to publish new module versions.
+
+## Contributing
+
+If you would like to help out, please target the `develop` branch when creating pull requests, otherwise the pipeline will have a bad time and we'll end up with stuff hitting the gallery too early.
 
 ## Currently available functions include:
 
