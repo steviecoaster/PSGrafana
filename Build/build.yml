@@ -4,8 +4,11 @@ trigger:
       - master
     exclude:
       - develop
-  pr:
-    - master
+pr:
+  branches:
+    include:
+     - master
+     
 
 jobs:
 - job: PrepPSGrafana
