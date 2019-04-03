@@ -60,7 +60,7 @@ jobs:
     condition: succeededOrFailed()
 
   - task: PowerShell@2
-    condition: equals(variables['Build.SourceBranch'], 'refs/heads/master')
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
     displayName: 'Publish PSGrafana To PSGallery'
     inputs:
         targetType: Inline
