@@ -14,6 +14,11 @@ function New-GrafanaApiKey {
 
         .EXAMPLE
         New-GrafanaApiKey -Name Alice -Role Editor
+
+        .NOTES
+        The generated API key is only displayed at runtime. If you need to retain it for any reason, be sure to it somewhere safe.
+        It is highly recommended you run this command saved to a variable such as $ApiKey = New-GrafanaApiKey -Name ElmerFudd -Role Viewer.
+        This way you can access the properties Name and Key within the variable. E.g. $ApiKey.name, or $ApiKey.key.
     #>
     [cmdletBinding()]
     Param(
@@ -29,14 +34,17 @@ function New-GrafanaApiKey {
 
     )
 
-    begin { $null = Get-GrafanaConfig}
+    begin { 
+        
+        $null = Get-GrafanaConfig
+        
+    }
 
     process {
         
         $header = @{ Authorization = "Bearer $($Configuration.apikey)"}
         $body = @{name = $Name; role = $Role} | ConvertTo-Json
 
-        $body
         $irmParams = @{
             Method = 'POST'
             Uri = "$($Configuration.GrafanaUri)/auth/keys"
@@ -45,20 +53,9 @@ function New-GrafanaApiKey {
             ContentType = "application/json"
 
         }
-
-
+        Write-Warning -Message "You'll only see the API key generated here one time. There is no method to retrieve/generate it."
         Invoke-RestMethod @irmParams
-        
-        $data = Invoke-RestMethod @irmParams
-        $NewApiKey = $data.key
-        Write-Information "API Key has been generated successfully"
-        Write-Information "This is the only time you'll be able to view the API key."
-        Write-Information "The key as been put into the $NewApiKey variable automatically"
-        Write-Information "Please make note of this key for your records, should you need it."
-
-        $data | Format-List
 
     }
-
 
 }
