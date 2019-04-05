@@ -12,7 +12,7 @@
 RootModule = 'PSGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.3'
+ModuleVersion = '0.0.4'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -80,7 +80,9 @@ FunctionsToExport = @('Get-GrafanaConfig',
 'Get-GrafanaDatasource',
 'Remove-GrafanaDatasource',
 'New-GrafanaSnapshot',
-'Get-GrafanaAlert')
+'Get-GrafanaAlert',
+'Get-GrafanaFolder',
+'New-GrafanaFolder')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'
