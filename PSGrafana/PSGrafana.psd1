@@ -12,7 +12,7 @@
 RootModule = 'PSGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.3'
+ModuleVersion = '0.0.4'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -79,8 +79,17 @@ FunctionsToExport = @('Get-GrafanaConfig',
 'Remove-GrafanaApiKey',
 'Get-GrafanaDatasource',
 'Remove-GrafanaDatasource',
+'Get-GrafanaSnapshot',
 'New-GrafanaSnapshot',
-'Get-GrafanaAlert')
+'Remove-GrafanaSnapshot',
+'Get-GrafanaAlert',
+'Suspend-GrafanaAlert',
+'Get-GrafanaFolder',
+'New-GrafanaFolder',
+'Set-GrafanaFolder',
+'Remove-GrafanaFolder',
+'Get-GrafanaOrg',
+'Get-GrafanaUser')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'
@@ -106,10 +115,10 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+         Tags = @('Grafana', 'PowershellCore', 'GrafanaAPI', 'Monitoring', 'Metrics', 'Dashboard')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/steviecoaster/PSGrafana/LICENSE.md'
 
         # A URL to the main website for this project.
         # ProjectUri = ''
