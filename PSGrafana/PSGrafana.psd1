@@ -115,10 +115,10 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+         Tags = @('Grafana', 'PowershellCore', 'GrafanaAPI', 'Monitoring', 'Metrics', 'Dashboard')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/steviecoaster/PSGrafana/LICENSE.md'
 
         # A URL to the main website for this project.
         # ProjectUri = ''
