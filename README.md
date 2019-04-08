@@ -27,6 +27,7 @@ If you would like to help out, please target the `develop` branch when creating 
 - New-GrafanaApiKey
 - New-GrafanaSnapshot
 - Get-GrafanaAlert
+- Suspend-GrafanaAlert
 
 ---
 
