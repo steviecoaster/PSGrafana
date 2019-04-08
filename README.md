@@ -27,8 +27,13 @@ If you would like to help out, please target the `develop` branch when creating 
 - Remove-GrafanaApiKey
 - New-GrafanaApiKey
 - New-GrafanaSnapshot
+- Get-GrafanaSnapshot
+- Remove-GrafanaSnapshot
 - Get-GrafanaAlert
 - Suspend-GrafanaAlert
+- New-GrafanaFolder
+- Get-GrafanaFolder
+- Remove-GrafanaFolder
 
 ---
 
