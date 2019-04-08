@@ -81,8 +81,9 @@ function Get-GrafanaFolder {
             }
         }
 
-        Invoke-RestMethod @irmParams
+        $return = Invoke-RestMethod @irmParams
 
+        $return
         
     }
 }

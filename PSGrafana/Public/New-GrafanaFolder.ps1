@@ -57,7 +57,7 @@ function New-GrafanaFolder {
             
             Method      = "POST"
             Headers     = @{ Authorization = "Bearer $($Configuration.apikey)"}
-            Uri         = "$($configuraiton.GrafanaUri)/folders"
+            Uri         = "$($Configuration.GrafanaUri)/folders"
             ContentType = "application/json"
             Body = $body | ConvertTo-Json
 
