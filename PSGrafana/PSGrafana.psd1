@@ -81,8 +81,13 @@ FunctionsToExport = @('Get-GrafanaConfig',
 'Remove-GrafanaDatasource',
 'New-GrafanaSnapshot',
 'Get-GrafanaAlert',
+'Suspend-GrafanaAlert',
 'Get-GrafanaFolder',
-'New-GrafanaFolder')
+'New-GrafanaFolder',
+'Set-GrafanaFolder',
+'Remove-GrafanaFolder',
+'Get-GrafanaOrg',
+'Get-GrafanaUser')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'
