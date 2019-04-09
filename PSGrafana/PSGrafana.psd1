@@ -70,10 +70,11 @@ Copyright = '(c) Stephen Valdinger. All rights reserved.'
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @('Get-GrafanaConfig',
+'Set-GrafanaConfig',
 'Get-GrafanaDashboard',
+'Remove-GrafanaDashboard'
 'Get-GrafanaServerHealth',
 'New-GrafanaAPIKey',
-'Set-GrafanaConfig',
 'Get-GrafanaApiKey',
 'New-GrafanaApiKey',
 'Remove-GrafanaApiKey',
