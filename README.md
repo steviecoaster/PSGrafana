@@ -20,6 +20,7 @@ If you would like to help out, please target the `develop` branch when creating 
 - Get-GrafanaConfig
 - Set-GrafanaConfig
 - Get-GrafanaDashboard
+- New-GrafanaDashboard
 - Remove-GrafanaDashboard
 - Get-GrafanaServerHealth
 - Get-GrafanaApiKey
