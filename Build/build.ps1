@@ -120,7 +120,6 @@ if($Deploy.IsPresent) {
         Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
 
     }    
-    Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
 
     Try {
         $Splat = @{
