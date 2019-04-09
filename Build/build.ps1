@@ -108,7 +108,7 @@ if($Deploy.IsPresent) {
     if($currentVersion.Build -eq 5) {
 
         $newVersion = "0.1.0"
-        Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"$newVersion")
+        Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]$newVersion)
 
     }
     
