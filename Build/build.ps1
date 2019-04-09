@@ -105,6 +105,8 @@ if($Deploy.IsPresent) {
 
     [version]$currentVersion = Get-Content  .\Build\release-version.txt
 
+    Write-Host $currentVersion
+
     if($currentVersion.Build -eq 5) {
 
         $newVersion = "0.1.0"
