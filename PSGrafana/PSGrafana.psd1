@@ -72,7 +72,9 @@ Copyright = '(c) Stephen Valdinger. All rights reserved.'
 FunctionsToExport = @('Get-GrafanaConfig',
 'Set-GrafanaConfig',
 'Get-GrafanaDashboard',
-'Remove-GrafanaDashboard'
+'New-GrafanaDashboard',
+'Remove-GrafanaDashboard',
+'Set-GrafanaDashboard',
 'Get-GrafanaServerHealth',
 'New-GrafanaAPIKey',
 'Get-GrafanaApiKey',
