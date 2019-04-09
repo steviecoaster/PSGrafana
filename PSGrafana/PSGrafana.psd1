@@ -12,7 +12,7 @@
 RootModule = 'PSGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.4'
+ModuleVersion = '0.0.5'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -70,10 +70,13 @@ Copyright = '(c) Stephen Valdinger. All rights reserved.'
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @('Get-GrafanaConfig',
+'Set-GrafanaConfig',
 'Get-GrafanaDashboard',
+'New-GrafanaDashboard',
+'Remove-GrafanaDashboard',
+'Set-GrafanaDashboard',
 'Get-GrafanaServerHealth',
 'New-GrafanaAPIKey',
-'Set-GrafanaConfig',
 'Get-GrafanaApiKey',
 'New-GrafanaApiKey',
 'Remove-GrafanaApiKey',
@@ -128,7 +131,7 @@ PrivateData = @{
 
         # ReleaseNotes of this module
 
-         ReleaseNotes = 'Documentation release. Wiki is now available and -Online help for each cmdlet points to it.'
+         ReleaseNotes = 'This release brings the cmdlet count up to 20! Consider this the first beta release!'
 
     } # End of PSData hashtable
 
