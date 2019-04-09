@@ -1,4 +1,5 @@
 <p align="center"><img src="https://github.com/steviecoaster/PSGrafana/wiki/Assets/PSGrafana.png" width=100></p>
+
 # PSGrafana
 
 The PSGrafana module is a PowerShell wrapper around the Grafana API. Grafana uses this API internally for everything you do in the web interface. It made sense to create a wrapper such that you could bolt Grafana tasks to any automation pipelines one might have in their organizations.
