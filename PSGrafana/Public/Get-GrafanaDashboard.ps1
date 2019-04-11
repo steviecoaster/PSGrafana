@@ -64,9 +64,9 @@ function Get-GrafanaDashboard {
 
                 }
 
-                $result = Invoke-WebRequest @irmParams
+                $result = Invoke-RestMethod @irmParams
 
-                $result.Content | ConvertFrom-Json
+                $result
             
             }
 
