@@ -20,7 +20,7 @@ function Get-GrafanaSnapshot {
     
     #>
     
-    [cmdletBinding(DefaultParameterSetName="Snapshot")]
+    [cmdletBinding(DefaultParameterSetName="Snapshot",HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaSnapshot")]
     Param(
         [Parameter(Mandatory,ParameterSetName="Snapshot")]
         [String]
