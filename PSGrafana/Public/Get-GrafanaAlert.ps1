@@ -130,7 +130,9 @@ function Get-GrafanaAlert {
         }#else
 
         $irmParams['Uri']
-        Invoke-RestMethod @irmParams
+        $result = Invoke-RestMethod @irmParams
+
+        $result
 
     }#process
 
