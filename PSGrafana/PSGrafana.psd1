@@ -15,7 +15,7 @@ RootModule = 'PSGrafana.psm1'
 ModuleVersion = '0.1.0'
 
 # Supported PSEditions
-CompatiblePSEditions = @('Core','5.1')
+#CompatiblePSEditions = @('Core','5.1')
 
 
 # ID used to uniquely identify this module
