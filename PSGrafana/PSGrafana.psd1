@@ -12,10 +12,10 @@
 RootModule = 'PSGrafana.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.5'
+ModuleVersion = '0.1.0'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @('Core')
 
 # ID used to uniquely identify this module
 GUID = 'dd2b7af6-c1df-498d-9019-a166b3a8db48'
@@ -30,7 +30,7 @@ CompanyName = 'Unknown'
 Copyright = '(c) Stephen Valdinger. All rights reserved.'
 
 # Description of the functionality provided by this module
- Description = 'This module enables you to interact with Grafana via is REST API'
+ Description = 'This module enables you to interact with Grafana via its REST API'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
@@ -76,6 +76,7 @@ FunctionsToExport = @('Get-GrafanaConfig',
 'Remove-GrafanaDashboard',
 'Set-GrafanaDashboard',
 'Get-GrafanaServerHealth',
+'Get-GrafanaAnnotation',
 'New-GrafanaAPIKey',
 'Get-GrafanaApiKey',
 'New-GrafanaApiKey',
@@ -92,7 +93,11 @@ FunctionsToExport = @('Get-GrafanaConfig',
 'Set-GrafanaFolder',
 'Remove-GrafanaFolder',
 'Get-GrafanaOrg',
-'Get-GrafanaUser')
+'Get-GrafanaOrgUser'
+'Get-GrafanaUser',
+'Set-GrafanaUser',
+'Get-GrafanaServerSettings'
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = '*'

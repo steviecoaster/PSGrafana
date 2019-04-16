@@ -25,8 +25,12 @@ function Get-GrafanaDashboard {
         Get-GrafanaDashboard -Name 'Smiley' -IncudeMetadata
     
     #>
-    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaDashboard")]
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaDashboard",DefaultParameterSetName="All")]
     Param(
+
+        [Parameter(Position=0,ParameterSetName='All')]
+        [Switch]
+        $All,
 
         [Parameter(Position=0,ParameterSetName='Name')]
         [String]
@@ -107,14 +111,33 @@ function Get-GrafanaDashboard {
     
                 }
 
-                $result = Invoke-WebRequest @irmParams
+                $result = Invoke-RestMethod @irmParams
                 
                 $result.Content | ConvertFrom-Json
             
             }
+
+            'All' {
+
+                $irmParams = @{
+            
+                    Method      = "GET"
+                    Uri         =  "$($configuration.GrafanaUri)/search?type=dash-db" 
+                    Headers     = $header
+                    ContentType = "application/json"
+    
+                }
+
+                $result = Invoke-RestMethod @irmParams
+
+                $result
+
+            }
+
         
         }#switch
-                
+
+        
     }#process
 
 }#function
