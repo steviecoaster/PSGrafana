@@ -107,9 +107,9 @@ if($Deploy.IsPresent) {
 
     Write-Host $currentVersion
 
-    if($currentVersion.Build -eq 5) {
+    if($currentVersion.Minor -eq 1 -and $currentVersion.Build -eq 0) {
 
-        $newVersion = "0.1.0"
+        $newVersion = "0.1.1"
         Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]$newVersion)
 
     }
@@ -117,7 +117,7 @@ if($Deploy.IsPresent) {
     else {
     
         $newVersion = $currentVersion.Build + 1
-        Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.0.$newVersion")
+        Update-ModuleManifest -Path .\PSGrafana\PSGrafana.psd1 -ModuleVersion $([version]"0.1.$newVersion")
 
     }    
 
