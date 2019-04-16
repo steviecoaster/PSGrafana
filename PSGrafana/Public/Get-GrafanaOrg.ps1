@@ -1,6 +1,26 @@
 function Get-GrafanaOrg {
+    <#
+    .SYNOPSIS
+    Returns information about Grafana Organizations
+    
+    .DESCRIPTION
+    Returns information about various organizations configured in your Grafana installation.
+    
+    .PARAMETER OrgName
+    Specify an Org name to retrieve information about that Org
+    
+    .PARAMETER CurrentOrg
+    Retrieve information about the Current Org the user belongs too.
+    
+    .EXAMPLE
+    Get-GrafanaOrg -OrgName Headquarters
 
-    [cmdletBinding()]
+    .EXAMPLE
+    Get-GrafanaOrg -CurrentOrg
+ 
+    #>
+    
+    [cmdletBinding(HelpUri="https://github.com/steviecoaster/PSGrafana/wiki/Get-GrafanaOrg")]
     Param(
         [Parameter()]
         [String]
