@@ -4,4 +4,5 @@ PSGrafana-build/**
 Build/release-notes.txt
 Build/release-version.txt
 Build/Output
+Build/*.zip
 .DS_Store
